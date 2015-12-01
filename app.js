@@ -20,6 +20,6 @@ app.get('/', function (req, res) {
 });
 
 
-var server = app.listen(process.env.PORT || 3000, function(){
+var server = app.listen(process.end.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, function(){
     console.log('Listening in port %d', server.address().port);
 });
