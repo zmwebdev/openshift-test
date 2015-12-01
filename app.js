@@ -20,6 +20,13 @@ app.get('/', function (req, res) {
 });
 
 
-var server = app.listen(process.end.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, function(){
+/*var server = app.listen(process.end.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, function(){
+    console.log('Listening in port %d', server.address().port);
+});*/
+
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000;
+var ip = process.env.OPENSHIFT_NODEJS_IP || process.env.IP || "127.0.0.1";
+
+var server = app.listen(port, ip, function(){
     console.log('Listening in port %d', server.address().port);
 });
